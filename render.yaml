@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: leetcode-daily-bot-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: LEETCODE_SESSION
+        sync: false
+      - key: LEETCODE_CSRFTOKEN
+        sync: false
+      - key: MOBILE_APP_PASSWORD
+        sync: false
+      - key: MOBILE_TOKEN_SECRET
+        generateValue: true
